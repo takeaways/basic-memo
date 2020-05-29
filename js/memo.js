@@ -24,6 +24,7 @@
 
   //우클릭 새로운 메모 생성
   const clickRight = e => {
+    e.preventDefault();
     const dataSet = {
       id: '',
       x: 0,
@@ -206,7 +207,7 @@
   //초기화 작업 //
   //해당 메모보드가 실행될 경우 초기화 작업을 진행 하는 부분
   const init = () => {
-    wrapper.addEventListener('mousedown', clickRight); //우클릭 확인을 위해 사용
+    wrapper.addEventListener('contextmenu', clickRight); //우클릭 확인을 위해 사용
     wrapper.addEventListener('drop', e => {
       e.preventDefault();
       const data = e.dataTransfer.getData('memoId');
